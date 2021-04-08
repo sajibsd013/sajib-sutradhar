@@ -1,0 +1,22 @@
+#about{
+    min-height: 100vh;
+}
+#about:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #f8f9fa;
+}
+.input-group-prepend{
+    width: 40px!important;
+}
+.list-group-item{
+    padding: 0.50rem 1.25rem!important;
+}
+#about .information p{
+    font-weight: 450;
+}
+@media only screen and (min-width: 425px){
+    #about{
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+}

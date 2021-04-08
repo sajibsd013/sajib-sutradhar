@@ -1,0 +1,9 @@
+
+#Currency{
+    min-height: 100vh;
+}
+
+#Currency:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #f8f9fa;
+}

@@ -1,0 +1,16 @@
+
+#education{
+    min-height: 100vh;
+}
+#education:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #f8f9fa;
+
+}
+
+@media only screen and (min-width: 425px){
+    #education{
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+}

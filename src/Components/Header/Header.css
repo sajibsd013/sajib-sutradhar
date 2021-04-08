@@ -1,0 +1,65 @@
+header{
+    min-height: 90vh;
+    width: 100%;
+}
+h2{
+    font-size: 3.5rem;
+}
+h4{
+    font-size: 1.25rem;
+}
+header h6{
+    max-width: 600px;
+    font-size: 14px;
+}
+
+.cv div a{
+    width: 160px;
+}
+
+.list-social-icons a {
+    color: #495057;
+}
+.list-social-icons a:hover {
+    color: #2196f3;
+}
+
+.list-social-icons a .fa-lg {
+    font-size: 1.75rem;
+}
+
+@media only screen and (max-width: 425px){
+    h2{
+        font-size: 2.75rem;
+        padding-top: 40px;
+    }
+    h4{
+        font-size: 1.25rem;
+    }
+    
+    .cv div a{
+        font-size: 11px;
+        width: 120px;
+    }
+}
+
+@media only screen and (min-width:425px){
+    header{
+        min-height: 90vh;
+        width: 100%;
+    }
+
+    header::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        opacity: .35;
+        background-image: url(bg.jpg) ;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

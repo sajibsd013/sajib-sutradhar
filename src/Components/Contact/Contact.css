@@ -1,0 +1,25 @@
+#contact{
+    min-height: 100vh;
+}
+
+#contact textarea{
+    width: 100%;
+    height: 130px;
+}
+
+#contact:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #f8f9fa;
+}
+
+#contact .btn{
+    width: 100px!important;
+    
+}
+
+@media only screen and (min-width: 425px){
+    #contact{
+        padding-left: 3rem!important;
+        padding-right: 3rem!important;
+    }
+}
