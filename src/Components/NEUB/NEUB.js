@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './NEUB.css';
+import { Modal, ModalBody, ModalFooter, ModalHeader , Button} from 'reactstrap';
 
 
 const NEUB = () => {
@@ -10,6 +11,8 @@ const NEUB = () => {
     const [totalRegularWaiver, setTotalRegularWaiver] = useState(0);
     const [totalRetakeCredit, setTotalRetakeCredit] = useState(0);
     const [totalRetakeWaiver, setTotalRetakeWaiver] = useState(0);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
 
     const amount = () => {
         let perCredit, fixed, regularAmount, retakeAmount;
@@ -45,8 +48,8 @@ const NEUB = () => {
 
         if (totalRetakeCredit !== 0) {
             retakeAmount = ((totalRetakeCredit * ((perCredit * (100 - totalRetakeWaiver)) / 100)));
-        }else{
-            retakeAmount=0;
+        } else {
+            retakeAmount = 0;
         }
 
 
@@ -56,6 +59,7 @@ const NEUB = () => {
 
     const setFunc = () => {
         setTotal(amount);
+        setModalIsOpen(!modalIsOpen);
     }
     const restFunc = () => {
         setTotal('00');
@@ -71,6 +75,17 @@ const NEUB = () => {
                     <h1 className="text-uppercase text-center text-muted  py-3 font-weight-bold">NEUB Fee Calculator</h1>
                     <div className='row justify-content-between'>
                         <div className="rounded col-md-4 bg-success shadow p-4 my-3 text-white d-flex justify-content-center align-items-center text-center">
+                            <Modal isOpen={modalIsOpen} onClick={setFunc}>
+                                <ModalHeader>
+                                    <h4>Total Amount</h4>
+                                </ModalHeader>
+                                <ModalBody className="rounded bg-success shadow p-4 my-3 text-white d-flex justify-content-center align-items-center text-center">
+                                    <h1 id="totalAmount" className="display-4" style={{ fontWeight: '400' }}>{total}</h1>
+                                </ModalBody>
+                                <ModalFooter>
+                                    <Button >Close</Button>
+                                </ModalFooter>
+                            </Modal>
                             <div>
                                 <h4>Total Amount</h4>
                                 <h1 id="totalAmount" className="display-4" style={{ fontWeight: '400' }}>{total}</h1>
@@ -109,7 +124,7 @@ const NEUB = () => {
                                 </div>
 
                                 <div className="mt-4 d-flex justify-content-center">
-                                    <a onClick={setFunc} className=" mx-2 btn btn-primary text-white" style={{ width: '120px' }}>GET</a>
+                                    <a onClick={setFunc}  className=" mx-2 btn btn-primary text-white" style={{ width: '120px' }}>GET</a>
                                     <input id="reset" onClick={restFunc} className=" mx-2 btn btn-primary" style={{ width: '120px' }} type="reset" value="RESET" />
                                 </div>
                             </form>
