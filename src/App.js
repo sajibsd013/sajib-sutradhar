@@ -1,15 +1,16 @@
 import './App.css';
 import Education from './Components/Education/Education';
 import Header from './Components/Header/Header';
-import Navbar from './Components/Navbar/Navbar';
+import Navigation from './Components/Navbar/Navigation';
 import Skill from './Components/Skill/Skill';
 import Footer from './Components/Footer/Footer';
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
 import Notfound from './Components/Notfound/Notfound';
-import NEUB from './Components/NEUB/NEUB'
-import Currency from './Components/Tools/Currency/Currency'
-
+import NEUB from './Components/NEUB/NEUB';
+import Currency from './Components/Tools/Currency/Currency';
+import {Provider} from 'react-redux';
+import myStore from './Redux/store';
 import {
   BrowserRouter as
     Router,
@@ -19,9 +20,9 @@ import {
 
 function App() {
   return (
-    <div >
+    <Provider store={myStore} >
       <Router>
-        <Navbar></Navbar>
+        <Navigation></Navigation>
         <Switch>
           <Route exact path="/">
             <Header> </Header>
@@ -50,7 +51,7 @@ function App() {
         </Switch>
       </Router>
       <Footer></Footer>
-    </div>
+    </Provider>
   );
 }
 export default App;
